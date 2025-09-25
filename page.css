@@ -1,0 +1,350 @@
+/* General Theme */
+body {
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+}
+
+
+
+/* Navbar Styles */
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: black;
+}
+.navbar{
+    background-color: palevioletred;
+}
+
+.nav-link {
+  margin: 0 10px;
+  font-size: 1rem;
+  color: black;
+}
+
+.nav-link:hover {
+  color: #3dc1d3;
+}
+.navbar a {
+  text-decoration: none !important; /* underline remove */
+}
+
+
+/* --- Login modal styling (safe, non-invasive) --- */
+.modal-content.rounded-4 {
+  border-radius: 14px;
+  overflow: hidden;
+}
+.modal-header.bg-primary {
+  background: linear-gradient(90deg,#6f42c1,#c44569);
+  color: white;
+  border-bottom: none;
+}
+.modal-body .form-control {
+  border-radius: 8px;
+}
+.btn-primary.w-100 {
+  background: linear-gradient(90deg,#ff6b81,#c44569);
+  border: none;
+}
+
+
+
+/* ===== Cart Modal Styling ===== */
+.cart-modal {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.cart-modal .modal-header {
+  background: linear-gradient(90deg, #ff6b81, #c44569);
+  color: #fff;
+  border-bottom: none;
+}
+
+.cart-modal .modal-header .modal-title {
+  font-weight: bold;
+}
+
+.cart-modal .modal-body {
+  background: #fafafa;
+  padding: 20px;
+}
+
+.cart-table thead {
+  background: #f1f1f1;
+}
+
+.cart-table th {
+  font-weight: 600;
+  color: #444;
+}
+
+.cart-table td {
+  vertical-align: middle;
+  font-size: 15px;
+}
+
+.cart-total-box {
+  margin-top: 15px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.cart-total-box h5 {
+  margin: 0;
+}
+
+.cart-modal .modal-footer {
+  background: #f9f9f9;
+  border-top: none;
+}
+
+.cart-modal .btn-success {
+  background: linear-gradient(90deg, #28a745, #218838);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+}
+
+.cart-modal .btn-success:hover {
+  background: linear-gradient(90deg, #218838, #1e7e34);
+}
+
+
+/*Home Page Styles */
+#home h1 {
+  color: #343a40;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* Home Background Slider */
+.home-section {
+  position: relative;
+  height: 100vh;
+  background: url("assets/back.jpg") no-repeat center contain;
+  background-size: cover;   /* full screen without crop/black */
+  text-align: center;
+  overflow: hidden;
+}
+
+.home-section h1 {
+  position: relative;
+  z-index: 2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Arrows */
+.slider-controls {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.slider-controls span {
+  font-size: 3rem;
+  cursor: pointer;
+  color: white;
+  border-radius: 50%;
+}
+
+.home-section:hover .slider-controls {
+  opacity: 1;
+}
+.heading-shadow {
+    color: black !important;
+  margin-top: 90px;
+  font-size: 3rem; 
+}
+
+.para-shadow {
+  color: teal;
+  font-size: 1.5rem;
+  text-shadow: 
+    2px 2px 5px #C6D870,   /* dark shadow */
+    -2px -2px 5px #EFF5D2; /* light highlight */
+}
+
+
+
+
+
+
+/* About Page Styles */
+
+.about-section {
+  background: url("assets/aboutback.jpg"); /* Soft craft-style background */
+  color: #6B3F69;
+}
+
+.heading-shadow {
+  color: #6B3F69 !important;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.para-shadow {
+  font-size: 1.2rem;
+  color: black;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+}
+
+.mission-vision {
+  background: palevioletred;
+  color: white;
+  border-radius: 80px;
+  transition: transform 0.3s ease;
+}
+
+.mission-vision:hover {
+  transform: translateY(-5px);
+}
+
+
+.text-pink {
+  color: #C71E64;
+}
+
+
+/* Gallery Page Styles */
+.gallery-bg {
+  background: url("assets/aboutback.jpg") no-repeat center center/cover;
+  color: #6B3F69; /* text ko white kar do taake visible rahe */
+}
+
+.gallery-img {
+  height: 250px; 
+  object-fit: contain; 
+  padding-top: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+.card {
+  border-radius: 10px;
+}
+
+#showMoreBtn {
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#showMoreBtn:hover {
+  background-color: #640D5F;
+  color: white;
+  border-color: #640D5F;
+}
+
+/*Workshop Page  Starts*/
+/* Hero Section */
+.workshop-bg {
+  background: url("assets/aboutback.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+  padding: 60px 0;
+}
+
+/* Card button center + pink */
+.card .btn {
+  display: block;              /* button ko block banaya */
+  margin: 15px auto 0 auto;    /* auto se center ho gaya */
+  background-color: #e91e63;   /* pink color */
+  border: none;
+  font-weight: bold;
+}
+
+.card .btn:hover {
+  background-color: #d81b60;   /* thoda dark pink hover pe */
+}
+
+<!-- CSS styling -->
+<style>
+  /* sab images ek hi size me */
+  .card-img-top {
+    height: 220px;       /* fix height */
+    object-fit: cover;   /* crop karke same size karega */
+  }
+
+  /* sab cards same height ho */
+  .card {
+    height: 100%;
+  }
+
+  /* Registration section background */
+  #register {
+    background: url("assets/aboutback.jpg") no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Form styling */
+  #register form {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  #register form:hover {
+    transform: scale(1.02);
+  }
+
+  #register h2 {
+    color: #6a1b9a;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  /* Button style */
+  #register button {
+    background: linear-gradient(90deg, #6a1b9a, #ab47bc);
+    border: none;
+    font-weight: bold;
+  }
+
+  #register button:hover {
+    background: linear-gradient(90deg, #ab47bc, #6a1b9a);
+  }
+</style>
+
+/* Footer Styles */
+.footer {
+  background-color: black; /* black background */
+  color: white;
+  min-height: 250px; /* lamba footer */
+}
+
+.footer a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #ff9800; /* hover effect */
+}
