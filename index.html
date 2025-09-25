@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art & Craft</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="page.css">
+</head>
+<body>
+
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg navbar-#c44569 bg-FFACAC fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"> <img src="assets/logo4.png" alt="My Logo" width="55" height="55"></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#workshop">Workshop</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Right Side -->
+        <form class="d-flex me-3">
+          <input class="form-control form-control-sm me-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-dark btn-sm"><i class="ri-search-2-line"></i></button>
+        </form>
+
+        <!-- Login Icon -->
+        <a href="#" class="text-dark me-3" data-bs-toggle="modal" data-bs-target="#loginModal" title="Log In">
+          <i class="ri-login-box-line fs-4 me-1"></i>
+        </a>
+
+        <!-- Cart Icon -->
+        <a href="#" class="text-dark position-relative" id="cartIcon" data-bs-toggle="modal" data-bs-target="#cartModal" title="Cart">
+          <i class="ri-shopping-cart-line fs-4"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ✅ Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow-lg rounded-4">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Login</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-4">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" placeholder="Enter your email">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" placeholder="Enter your password">
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Log In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- ✅ Cart Modal -->
+  <!-- Cart Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content cart-modal">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cartModalLabel">🛒 Your Shopping Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover cart-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th class="text-end">Price</th>
+            </tr>
+          </thead>
+          <tbody id="cartItems">
+            <!-- JS se items yahan add hongay -->
+          </tbody>
+        </table>
+        <div class="cart-total-box d-flex justify-content-between align-items-center">
+          <h5>Total:</h5>
+          <h5 class="text-primary">$<span id="cartTotal">0.00</span></h5>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+        <button class="btn btn-success">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+
+  <!-- Home page STart -->
+    <section id="home" class="home-section d-flex align-items-center justify-content-center text-white">
+  <div class="overlay"></div>
+ <div class="text-center my-4">
+  <h1 class="display-8 fw-bold heading-shadow">
+    Craft Design
+  </h1>
+  <p class="fw-bold para-shadow">
+    Handmade Art & Craft for Every Occasion
+  </p>
+</div>
+
+  <!-- Navigation Arrows -->
+  <div class="slider-controls">
+    <span class="prev"><i class="ri-arrow-left-s-line"></i></span>
+    <span class="next"><i class="ri-arrow-right-s-line"></i></span>
+  </div>
+</section>
+
+      <!-- About  Page Start -->
+
+<section id="about" class="about-section py-5">
+  <div class="container">
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <h2 class="heading-shadow">About Us</h2>
+      <p class="para-shadow">
+        Bringing Handmade Craft to Life with Love & Creativity
+      </p>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row align-items-center mb-5">
+      <!-- Left: Image -->
+      <div class="col-md-6 text-center">
+        <img src="assets/about.gif" alt= "Craft Work" class="img-fluid rounded shadow">
+      </div>
+      <!-- Right: Text -->
+      <div class="col-md-6">
+        <h3>Who We Are</h3>
+        <p style="color: black;">
+          We are passionate creators, bringing unique handmade art and crafts that celebrate culture, creativity, and tradition. Each product is crafted with love and care to make your moments more special.
+        </p>
+        <h3>What We Do</h3>
+        <p style="color: black;">
+          From decorative items to personalized gifts, our craft collection blends tradition with modern style. Every piece tells a story of creativity.
+        </p>
+      </div>
+    </div>
+
+    <!-- Mission & Vision -->
+<div class="container my-5">
+  <div class="row justify-content-center">
+    
+    <!-- Mission -->
+    <div class="col-md-5">
+      <div class="mission-vision text-center p-4 shadow">
+        <h3 style="color: #640D5F;">Our Mission</h3>
+        <p>To make unique handmade art accessible to everyone and spread creativity across homes.</p>
+      </div>
+    </div>
+
+    <!-- Vision -->
+    <div class="col-md-5">
+      <div class="mission-vision text-center p-4 shadow">
+        <h3 style="color: #640D5F;">Our Vision</h3>
+        <p>To revive the beauty of crafts with a modern touch, keeping traditions alive.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <!-- Why Choose Us -->
+    <div class="row text-center">
+      <h3 class="mb-4">Why Choose Us</h3>
+      <div class="col-md-3 mb-3">
+        <i class="ri-brush-line display-4 text-pink"></i>
+        <p style="font-weight: bold;">Creative Designs</p>
+      </div>
+      <div class="col-md-3 mb-3">
+        <i class="ri-hand-heart-line display-4 text-pink"></i>
+        <p style="font-weight: bold;">Customer Trust</p>
+      </div>
+      <div class="col-md-3 mb-3">
+        <i class="ri-leaf-line display-4 text-pink"></i>
+        <p style="font-weight: bold;">Eco-friendly Products</p>
+      </div>
+      <div class="col-md-3 mb-3">
+        <i class="ri-truck-line display-4 text-pink"></i>
+        <p style="font-weight: bold;">Fast Delivery</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+ <!-- Gallery Page Start -->
+<section id="gallery" class="py-5 gallery-bg">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold" style="color: #640D5F;">Original Art Work</h2>
+    <div class="row" id="productList">
+
+      <!-- Product 1 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card shadow-sm border-0 h-100">
+          <img src="assets/p1.jpeg" class="card-img-top gallery-img" alt="Product 1">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Untitiled-1</h5>
+            <p class="card-text">$25</p>
+            <p class="card-text">26x36</p>
+            <button class="btn btn-warning add-to-cart" data-name="Product 1">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card shadow-sm border-0 h-100">
+          <img src="assets/p2.jpg" class="card-img-top gallery-img" alt="Product 2">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Untitiled-2</h5>
+            <p class="card-text">$30</p>
+            <p class="card-text">78x8</p>
+            <button class="btn btn-warning add-to-cart" data-name="Product 2">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card shadow-sm border-0 h-100">
+          <img src="assets/p3.jpg" class="card-img-top gallery-img" alt="Product 3">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Untitiled-3</h5>
+            <p class="card-text">$45</p>
+            <p class="card-text">32x12</p>
+            <button class="btn btn-warning add-to-cart" data-name="Product 3">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card shadow-sm border-0 h-100">
+          <img src="assets/p4.jpeg" class="card-img-top gallery-img" alt="Product 4">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Untitiled-4</h5>
+            <p class="card-text">$89</p>
+            <p class="card-text">34x79</p>
+            <button class="btn btn-warning add-to-cart" data-name="Product 4">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card shadow-sm border-0 h-100">
+          <img src="assets/p5.jpeg" class="card-img-top gallery-img" alt="Product 5">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Untitiled-5</h5>
+            <p class="card-text">$78</p>
+            <p class="card-text">23x90</p>
+            <button class="btn btn-warning add-to-cart" data-name="Product 5">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card shadow-sm border-0 h-100">
+          <img src="assets/p6.jpg" class="card-img-top gallery-img" alt="Product 6">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Untitiled-6</h5>
+            <p class="card-text">$445</p>
+            <p class="card-text">12x30</p>
+            <button class="btn btn-warning add-to-cart" data-name="Product 6">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card shadow-sm border-0 h-100">
+          <img src="assets/p7.jpeg" class="card-img-top gallery-img" alt="Product 7">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Untitiled-7</h5>
+            <p class="card-text">$57</p>
+            <p class="card-text">67x31</p>
+            <button class="btn btn-warning add-to-cart" data-name="Product 7">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card shadow-sm border-0 h-100">
+          <img src="assets/p8.webp" class="card-img-top gallery-img" alt="Product 8">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Untitiled-8</h5>
+            <p class="card-text">$23</p>
+            <p class="card-text">90x67</p>
+            <button class="btn btn-warning add-to-cart" data-name="Product 8">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 9 -->
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card shadow-sm border-0 h-100">
+          <img src="assets/p9.jpg" class="card-img-top gallery-img" alt="Product 9">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Untitiled-9</h5>
+            <p class="card-text">$90</p>
+            <p class="card-text">64x34</p>
+            <button class="btn btn-warning add-to-cart" data-name="Product 9">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hidden Products -->
+      <div class="col-md-4 col-sm-6 mb-4 extra-product d-none">
+        <div class="card shadow-sm border-0 h-100">
+          <img src="assets/p10.jpeg" class="card-img-top gallery-img" alt="Product 10">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Untitiled-10</h5>
+            <p class="card-text">$78</p>
+            <p class="card-text">87x56</p>
+            <button class="btn btn-warning add-to-cart" data-name="Product 10">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 mb-4 extra-product d-none">
+        <div class="card shadow-sm border-0 h-100">
+          <img src="assets/p11.jpg" class="card-img-top gallery-img" alt="Product 11">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Untitiled-11</h5>
+            <p class="card-text">$800</p>
+            <p class="card-text">56x73</p>
+            <button class="btn btn-warning add-to-cart" data-name="Product 11">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 mb-4 extra-product d-none">
+        <div class="card shadow-sm border-0 h-100">
+          <img src="assets/p12.jpeg" class="card-img-top gallery-img" alt="Product 12">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Untitiled-12</h5>
+            <p class="card-text">$23</p>
+            <p class="card-text">9x34</p>
+            <button class="btn btn-warning add-to-cart" data-name="Product 12">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Show More Button -->
+    <div class="text-center mt-4">
+      <button id="showMoreBtn" class="btn btn-outline-dark rounded-pill px-4 py-2">
+        Show More <i class="ri-arrow-down-s-line"></i>
+      </button>
+    </div>
+  </div>
+</section>
+<script>
+  document.getElementById("showMoreBtn").addEventListener("click", function() {
+    const extraProducts = document.querySelectorAll(".extra-product");
+    extraProducts.forEach(product => {
+      product.classList.remove("d-none");
+    });
+    this.style.display = "none"; // Button hide ho jayega
+  });
+</script>
+
+<!-- Workshop Page Satrt -->
+  <section class="workshop-bg" id="workshop">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-5">Upcoming Workshops</h2>
+      <div class="row g-4">
+
+        <!-- Workshop Card 1 -->
+        <div class="col-md-4">
+          <div class="card shadow h-100">
+            <img src="assets/w1.png" class="card-img-top" alt="Pot Painting">
+            <div class="card-body">
+              <h5 class="card-title">Pot Painting Workshop</h5>
+              <p class="card-text">Date: Oct 10, 2025<br>Time: 3:00 PM – 5:00 PM<br>Age Group: All Ages</p>
+              <p>Unleash your creativity by painting colorful clay pots with unique designs.</p>
+              <button class="btn btn-primary register-btn">Register Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workshop Card 2 -->
+        <div class="col-md-4">
+          <div class="card shadow h-100">
+            <img src="assets/w2.jpeg" class="card-img-top" alt="Origami">
+            <div class="card-body">
+              <h5 class="card-title">Origami Basics</h5>
+              <p class="card-text">Date: Oct 15, 2025<br>Time: 11:00 AM – 1:00 PM<br>Age Group: Kids & Beginners</p>
+              <p>Learn the Japanese art of paper folding and create amazing paper crafts.</p>
+              <button class="btn btn-primary register-btn">Register Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workshop Card 3 -->
+        <div class="col-md-4">
+          <div class="card shadow h-100">
+            <img src="assets/w3.jpg" class="card-img-top" alt="Clay Modeling">
+            <div class="card-body">
+              <h5 class="card-title">Clay Modeling</h5>
+              <p class="card-text">Date: Oct 20, 2025<br>Time: 2:00 PM – 4:00 PM<br>Age Group: Kids</p>
+              <p>Get hands-on with clay and design creative models with step-by-step guidance.</p>
+              <button class="btn btn-primary register-btn">Register Now</button>
+            </div>
+          </div>
+        </div>
+
+<div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="assets/w4.jpg" class="card-img-top" alt="Fabric Painting">
+          <div class="card-body">
+            <h5 class="card-title">Fabric Painting</h5>
+            <p class="card-text">Date: Oct 25, 2025<br>Time: 3:00 PM – 5:00 PM<br>Age Group: Teens & Adults</p>
+            <p>Learn to design and paint beautiful patterns on fabric using colors and brushes.</p>
+            <button class="btn btn-primary register-btn">Register Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workshop Card 5 -->
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="assets/w5.jpg" class="card-img-top" alt="DIY Jewelry Making">
+          <div class="card-body">
+            <h5 class="card-title">DIY Jewelry Making</h5>
+            <p class="card-text">Date: Oct 28, 2025<br>Time: 12:00 PM – 2:00 PM<br>Age Group: Adults</p>
+            <p>Create your own stylish necklaces, bracelets, and earrings using beads & wires.</p>
+            <button class="btn btn-primary register-btn">Register Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workshop Card 6 -->
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="assets/w6.jpeg" class="card-img-top" alt="Candle Making">
+          <div class="card-body">
+            <h5 class="card-title">Candle Making</h5>
+            <p class="card-text">Date: Nov 1, 2025<br>Time: 2:00 PM – 4:00 PM<br>Age Group: All Ages</p>
+            <p>Make creative candles in different shapes and scents to decorate your home.</p>
+            <button class="btn btn-primary register-btn">Register Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workshop Card 7 -->
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="assets/w7.jpg" class="card-img-top" alt="Glass Painting">
+          <div class="card-body">
+            <h5 class="card-title">Glass Painting</h5>
+            <p class="card-text">Date: Nov 5, 2025<br>Time: 3:00 PM – 5:00 PM<br>Age Group: Teens & Adults</p>
+            <p>Learn to paint beautiful designs on glass surfaces using vibrant glass paints.</p>
+            <button class="btn btn-primary register-btn">Register Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workshop Card 8 -->
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="assets/w8.jpeg" class="card-img-top" alt="Paper Quilling">
+          <div class="card-body">
+            <h5 class="card-title">Paper Quilling</h5>
+            <p class="card-text">Date: Nov 10, 2025<br>Time: 11:00 AM – 1:00 PM<br>Age Group: Kids & Beginners</p>
+            <p>Create amazing patterns and crafts using colorful paper quilling strips.</p>
+            <button class="btn btn-primary register-btn">Register Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workshop Card 9 -->
+      <div class="col-md-4">
+        <div class="card shadow h-100">
+          <img src="assets/w9.jpeg" class="card-img-top" alt="Calligraphy Art">
+          <div class="card-body">
+            <h5 class="card-title">Calligraphy Art</h5>
+            <p class="card-text">Date: Nov 15, 2025<br>Time: 1:00 PM – 3:00 PM<br>Age Group: Teens & Adults</p>
+            <p>Master the art of beautiful handwriting and lettering with calligraphy tools.</p>
+            <button class="btn btn-primary register-btn">Register Now</button>
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+
+   <!-- Registration Form -->
+  <section id="register" class="py-5" style="display: none;">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-4">Register for a Workshop</h2>
+    <form class="w-50 mx-auto shadow p-4 rounded bg-white">
+      <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" placeholder="Enter your name">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" placeholder="Enter your email">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Phone Number</label>
+        <input type="text" class="form-control" placeholder="Enter your phone number">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Select Workshop</label>
+        <select class="form-select">
+          <option>Pot Painting</option>
+          <option>Origami Basics</option>
+          <option>Clay Modeling</option>
+          <option>Fabric Painting</option>
+          <option>DIY Jewelry Making</option>
+          <option>Candle Making</option>
+          <option>Glass Painting</option>
+          <option>Paper Quilling</option>
+          <option>Calligraphy Art</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success w-100">Submit</button>
+    </form>
+  </div>
+</section>
+
+<!-- JavaScript -->
+<script>
+  // sab buttons select kar lo
+  const registerBtns = document.querySelectorAll(".register-btn");
+  const registerForm = document.getElementById("register");
+
+  registerBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      registerForm.style.display = "block"; // show form
+      registerForm.scrollIntoView({ behavior: "smooth" }); // smooth scroll
+    });
+  });
+</script>
+
+  <!-- Footer Section -->
+<footer id="contact" class="footer bg-dark text-white py-5">
+  <div class="container">
+    <div class="row">
+      
+      <!-- Brand Name & Info -->
+      <div class="col-md-4">
+        <h3>Art & Craft World</h3>
+        <p>
+          Bringing creativity to life with unique handmade art & craft.
+        </p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4">
+        <h5>Contact Us</h5>
+        <p>Email: artistsmall@gmail.com</p>
+        <p>Phone: +92 300 1234567</p>
+        <p>Address: Lahore, Pakistan</p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-md-4">
+        <h5>Follow Us</h5>
+        <a href="#" class="text-white me-3"><i class="ri-instagram-line"></i></a>
+        <a href="#" class="text-white me-3"><i class="ri-facebook-circle-line"></i></a>
+        <a href="#" class="text-white me-3"><i class="ri-twitter-line"></i></a>
+      </div>
+
+    </div>
+
+    <hr class="bg-white">
+    <div class="text-center">
+      <p class="mb-0">© 2025 Art & Craft World | All Rights Reserved</p>
+    </div>
+  </div>
+</footer>
+    <!-- End of Footer Section -->
+
+
+
+
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+  
+<!-- ====== Paste this just before closing </body> ====== -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Elements
+  const cartCountEl = document.getElementById("cartCount");
+  const cartItemsTbody = document.getElementById("cartItems");
+  const cartTotalEl = document.getElementById("cartTotal");
+
+  // If these are missing, create safe fallbacks (prevents JS errors)
+  if (!cartCountEl || !cartItemsTbody || !cartTotalEl) {
+    console.error("Cart elements missing: check IDs (#cartCount, #cartItems, #cartTotal).");
+    return;
+  }
+
+  // Cart array
+  let cart = [];
+
+  // Add to cart click handler (applies to existing buttons)
+  function handleAddToCartButton(button) {
+    button.addEventListener("click", () => {
+      // find card body containing this button
+      const cardBody = button.closest(".card-body") || button.closest(".card");
+      if (!cardBody) return;
+
+      // name: first .card-title text
+      const titleEl = cardBody.querySelector(".card-title");
+      const name = titleEl ? titleEl.innerText.trim() : (button.dataset.name || "Item");
+
+      // price: prefer data-price attribute, otherwise take first .card-text that looks like price
+      let price = 0;
+      if (button.dataset && button.dataset.price) {
+        price = parseFloat(button.dataset.price) || 0;
+      } else {
+        // find nearest .card-text that has a number like $25 or 25
+        const textEls = cardBody.querySelectorAll(".card-text");
+        for (let te of textEls) {
+          const num = parseFloat(te.innerText.replace(/[^0-9.]/g, ""));
+          if (!isNaN(num) && num > 0) { price = num; break; }
+        }
+      }
+
+      // push to cart
+      cart.push({ name, price });
+      updateCartUI();
+    });
+  }
+
+  // attach to all existing add-to-cart buttons
+  document.querySelectorAll(".add-to-cart").forEach(btn => {
+    handleAddToCartButton(btn);
+  });
+
+  // Update UI function
+  function updateCartUI() {
+    // update badge
+    cartCountEl.textContent = cart.length;
+
+    // render items in table body
+    cartItemsTbody.innerHTML = "";
+    let total = 0;
+    cart.forEach(item => {
+      const tr = document.createElement("tr");
+
+      const tdName = document.createElement("td");
+      tdName.textContent = item.name;
+
+      const tdPrice = document.createElement("td");
+      tdPrice.textContent = `$${Number(item.price).toFixed(2)}`;
+
+      tr.appendChild(tdName);
+      tr.appendChild(tdPrice);
+      cartItemsTbody.appendChild(tr);
+
+      total += Number(item.price);
+    });
+
+    cartTotalEl.textContent = Number(total).toFixed(2);
+  }
+
+  // Optional: when cart modal opens ensure UI is up-to-date
+  const cartModal = document.getElementById("cartModal");
+  if (cartModal) {
+    cartModal.addEventListener('show.bs.modal', () => {
+      updateCartUI();
+    });
+  }
+
+  // DEBUG helper (open console to view)
+  window.__debugCart = () => ({ cart, total: cart.reduce((s,i)=>s+Number(i.price),0) });
+});
+</script>
+
+
+
+</body>
+</html>
